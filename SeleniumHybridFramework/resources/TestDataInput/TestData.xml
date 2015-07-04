@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Test_data>
+					
+					
+<!-- 
+Notes**
+
+A. No need to provide values for all type of locators. Any one the following value may required to perform an action.
+<locator-id></locator-id> or <locator-class><locator-class> or <locator-xpath></locator-xpath>
+
+B. For example: If you want to Type somewhere on webpage, then provide any one locator to identify that object.
+
+C. Locator is not mandatory only for common/native activities of browser. Like visit url, closing browser, open browser, 
+open new tab, open new window, exit browser etc. Apart from this for any application activity like typing, verifying, click, 
+mouse hover etc any one locator value is required. 
+
+-->
+					
+			<test_step id = S1TC1>
+				<step>
+					<action>VisitURL</action>
+					<locator-id></locator-id>
+					<locator-class><locator-class>
+					<locator-xpath></locator-xpath>
+					<data>http://www.nextag.com/</data>
+				</step>
+				<step>
+					<action>Type</action>
+					<locator-id>searchTop-s2</locator-id>
+					<locator-class><locator-class>
+					<locator-xpath></locator-xpath>
+					<data>shoes</data>
+				</step>
+				<step>
+					<action>Submit</action>
+					<locator-id>search-button</locator-id>
+					<locator-class><locator-class>
+					<locator-xpath></locator-xpath>
+					<data></data>
+				</step>
+				<step>
+					<action>DropdownOptionClick</action>
+					<locator-id>sortingOptions</locator-id>
+					<locator-class><locator-class>
+					<locator-xpath></locator-xpath>
+					<data>Seller Rating</data>
+				</step>
+				<step>
+					<action>DropdownOptionClick</action>
+					<locator-id>sortingOptions</locator-id>
+					<locator-class><locator-class>
+					<locator-xpath></locator-xpath>
+					<data>Seller Rating</data>
+				</step>
+				<step>
+					<action>VerifyURL</action>
+					<locator-id></locator-id>
+					<locator-class><locator-class>
+					<locator-xpath></locator-xpath>
+					<data>psort=11</data>
+				</step>
+			</test_step>
+			
+			<test_step id = S1TC2>
+				<step>
+					<action>VisitURL</action>
+					<locator-id></locator-id>
+					<locator-class><locator-class>
+					<locator-xpath></locator-xpath>
+					<data>http://www.nextag.com/</data>
+				</step>
+				<step>
+					<action>Type</action>
+					<locator-id>searchTop-s2</locator-id>
+					<locator-class><locator-class>
+					<locator-xpath></locator-xpath>
+					<data>html</data>
+				</step>
+				<step>
+					<action>Submit</action>
+					<locator-id>search-button</locator-id>
+					<locator-class><locator-class>
+					<locator-xpath></locator-xpath>
+					<data></data>
+				</step>
+				<step>
+					<action>VerifyLabel</action>
+					<locator-id>sortingOptions</locator-id>
+					<locator-class><locator-class>
+					<locator-xpath>//*[@id='search_results_content_id']/div[4]/div[2]/div[2]/span</locator-xpath>
+					<data>HTML</data>
+				</step>
+			</test_step>
+
+<!--
+Note**
+A. In order to test values in DB.
+You have to write Action as DBname.
+Locator-id will be name of the DB. In below example DBName is 'SeleniumTest'.
+Data tag used to provide SQL query.
+
+-->
+			<test_step id = S2TC1>
+				<step>
+					<action>DBName</action>
+					<locator-id>SeleniumTest</locator-id>
+					<locator-class><locator-class>
+					<locator-xpath></locator-xpath>
+					<data>select * from Search_VisitorID order by ts desc;</data>
+				</step>
+				<step>
+					<action>VerifyQryResult</action>
+					<locator-id>SearchKeyWord</locator-id>
+					<locator-class><locator-class>
+					<locator-xpath></locator-xpath>
+					<data>html</data>
+				</step>
+			</test_step>
+			
+
+</Test_data>

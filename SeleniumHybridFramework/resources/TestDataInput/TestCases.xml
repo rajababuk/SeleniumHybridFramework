@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<Test_Cases>
+				<scenario id=S1> 
+					<record>
+						<testcase>TC1</testcase> 
+						<execute>Y</execute>
+						<description>Verify URL of landing page</description>
+						<teststepID>S1TC1</teststepID>
+					</record>	
+					
+					<record>
+						<testcase>TC2</testcase> 
+						<execute>Y</execute>
+						<description>Verify label and take screen shot</description>
+						<teststepID>S1TC2</teststepID>
+					</record>	
+					
+					<record>
+						<testcase>TC3</testcase> 
+						<execute>N</execute>
+						<description>Verify label after filter from drop down</description>
+						<teststepID>S1TC3</teststepID>
+					</record>	
+				</scenario>
+				
+				<scenario id=S2>					
+					<record>
+						<testcase>TC1</testcase> 
+						<execute>Y</execute>
+						<description>Verify Frames on web page</description>
+						<teststepID>S2TC1</teststepID>
+					</record>	
+					
+					<record>
+						<testcase>TC2</testcase> 
+						<execute>Y</execute>
+						<description>Verify Java script pop up</description>
+						<teststepID>S2TC2</teststepID>
+					</record>	
+				</scenario>
+
+				
+				<scenario id=S3>				
+					<record>
+						<testcase>TC1</testcase> 
+						<execute>N</execute>
+						<description>Verify Frames and pop up and mouse hover on landing page</description>
+						<teststepID>S3TC1</teststepID>
+					</record>	
+					
+					<record>
+						<testcase>TC2</testcase> 
+						<execute>N</execute>
+						<description>Verify Frames and pop up and mouse hover on landing page</description>
+						<teststepID>S3TC2</teststepID>
+					</record>	
+					
+					<record>
+						<testcase>TC3</testcase> 
+						<execute>N</execute>
+						<description>Verify Frames and pop up and mouse hover on landing page</description>
+						<teststepID>S3TC3</teststepID>
+					</record>	
+					
+					<record>
+						<testcase>TC4</testcase>  
+						<execute>N</execute>
+						<description>Verify Frames and pop up and mouse hover on landing page</description>
+						<teststepID>S3TC4</teststepID>
+					</record>	
+				</scenario>				
+				
+				
+				<scenario id=S4>					
+					<record>
+						<testcase>TC1</testcase>  
+						<execute>Y</execute>
+						<description>Verify DB value</description>
+						<teststepID>S4TC1</teststepID>
+					</record>	
+					
+					<record>
+						<testcase>TC2</testcase> 
+						<execute>N</execute>
+						<description>Verify DB value for ui input</description>
+						<teststepID>S4TC2</teststepID>
+					</record>	
+				</scenario>
+
+	</Test_Cases>
