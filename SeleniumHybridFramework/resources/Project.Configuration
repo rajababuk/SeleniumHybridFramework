@@ -1,0 +1,30 @@
+//Version 1.2
+//Configure your test environment here.
+//Please do not provide any value in double quotes.
+//Yes, you need to configure this file every time before starting this automation suite.
+
+//Release number:
+Release=1.0
+
+//Browser to test. All supported browser drivers are placed with framework, under following folder :   
+//User Chrome, Firefox, IE, and/or Safari. 
+Browser=Chrome
+
+
+//Path of input XML file. You have to create three XML files.
+//First XML file define test scenarios.
+//Second XML file define test cases.
+//Third XMl file define test data.
+//Sample XML files are provided with framework, please look into those to create your xml file as required.
+TestScenrios=/Users/ashv/Automation/workspace/SeleniumHybridFramework/SeleniumHybridFramework/resources/TestDataInput/TestScenraios.xml
+TestCases=/Users/ashv/Automation/workspace/SeleniumHybridFramework/SeleniumHybridFramework/resources/TestDataInput/TestCases.xml
+TestData=/Users/ashv/Automation/workspace/SeleniumHybridFramework/SeleniumHybridFramework/resources/TestDataInput/TestData.xml
+
+
+//If are testing values inside DB then Provide DB connection details, currently we are supporting  MSSQL. 
+//Please  provide following DB credentials.s
+DBServer=MSSQL
+DBConnectionString=c2pin-lap-200
+DBUserID=sa
+DBPassword=password
+
