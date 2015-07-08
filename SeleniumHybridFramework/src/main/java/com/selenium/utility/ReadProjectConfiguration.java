@@ -18,6 +18,10 @@
 
 package com.selenium.utility;
 
+import java.util.Properties;
+
+import org.apache.log4j.Logger;
+
 
 
 
@@ -37,4 +41,23 @@ package com.selenium.utility;
 
 public class ReadProjectConfiguration {
 
+	
+	/*  Set to log details in log file according to "log4j.propereties" file.. */
+	static Logger log = Logger.getLogger(XMLparsing.class.getName());
+	static final String LOG_PROPERTIES_FILE = "resources/log4j.properties";
+	
+	//To read property file use Property class
+	Properties conf_file = new Properties();
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
