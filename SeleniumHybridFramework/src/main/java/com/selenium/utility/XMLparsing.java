@@ -4,9 +4,7 @@ import org.apache.log4j.Logger;
 
 public class XMLparsing {
 	
-	/*
-	 * Start logging details.
-	 */
+	//Logging details based on log4j.property file 
 	static Logger log = Logger.getLogger(XMLparsing.class.getName());
 	static final String LOG_PROPERTIES_FILE = "resources/log4j.properties";
 	
