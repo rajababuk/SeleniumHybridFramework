@@ -18,6 +18,14 @@
 
 package com.selenium.model;
 
+import org.apache.log4j.Logger;
+
+import com.selenium.utility.*;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
 
 /**
  * This class is initialization class therefore contains main function. This class will work as controller. 
@@ -34,13 +42,28 @@ package com.selenium.model;
 
 
 public class GlobalModel {
-	//TODO.
-	//Create Object of DAO 
-	//Call DAO methods based on before,test OR after operations.
+	
+	//Logging details in log.property file 
+	static Logger log = Logger.getLogger(GlobalModel.class.getName());
+	static final String LOG_PROPERTIES_FILE = "resources/log4j.properties";
+	
+	@BeforeClass
+	public static void intialTestSetup() {
+		//Reading configuration file and assign to global variable values from configuration file.
+		ReadProjectConfiguration Read = new ReadProjectConfiguration();
+		Read.readProjectConfigure();	
+	}
+	
+	@Test
+	public void RunSuite() {
+		XMLparsing xml = new XMLparsing();
+		xml.xmlTestData();
+	}
+	
+	@AfterClass
+	public static void processTestReport() {
+		
+	}
+	
+	
 }
-
-/*
-*  - To do before
-*  -to do test 
-*  -to do after
-*/

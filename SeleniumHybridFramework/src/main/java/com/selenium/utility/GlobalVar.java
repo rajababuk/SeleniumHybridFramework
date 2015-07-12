@@ -42,7 +42,12 @@ public class GlobalVar {
 	//Set to log details in log file according to "log4j.propereties" file.. 
 	static Logger log = Logger.getLogger(GlobalVar.class.getName());
 	
-	
-	
-	
+	public static String release_num;
+	public static String browser;
+	public static String testscenrios_xml;
+	public static String testcase_xml;
+	public static String testdata_xml;
+	public static String DBConnectionString;
+	public static String user_id;
+	public static String password;
 }

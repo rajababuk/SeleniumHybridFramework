@@ -1,19 +1,14 @@
 package com.selenium.dbconfiguration;
 
-import java.beans.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Vector;
 
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
-import javax.sql.ConnectionPoolDataSource;
-import javax.sql.PooledConnection;
-
 import org.apache.log4j.Logger;
 
 import com.selenium.dto.GlobalBean;
+import com.selenium.utility.GlobalVar;
 
 public class DBconnection implements Runnable  {
 	
@@ -22,10 +17,9 @@ public class DBconnection implements Runnable  {
 	static final String LOG_PROPERTIES_FILE = "resources/log4j.properties";
 	
 	//Bean class object for Setter.
-	GlobalBean GetSet= new GlobalBean();
-	String DBConnection=GetSet.getDBConnectionString();
-	String DBUser=GetSet.getUser_id();
-	String DBPass=GetSet.getPassword();
+	String DBConnection=GlobalVar.DBConnectionString;
+	String DBUser=GlobalVar.user_id;
+	String DBPass=GlobalVar.password;
 	
 	//Number of initial connections
 	private int initialConnectionCount = 5;  
@@ -42,11 +36,6 @@ public class DBconnection implements Runnable  {
     //Constructor   
     public DBconnection () throws SQLException   
     {   
-        // Initialize the required parameters   
-    	String urlString = DBConnection;   
-        String userName = DBUser;   
-        String password = DBPass;   
-  
         for(int cnt=0; cnt<initialConnectionCount; cnt++)   
         {   
             // Add a new connection to the available list.   
@@ -59,8 +48,92 @@ public class DBconnection implements Runnable  {
     }    
 	
 	
+    private Connection getConnection() throws SQLException   
+    {   
+        return DriverManager.getConnection(DBConnection, DBUser, DBPass);   
+    }   
+       
+    public synchronized Connection checkout() throws SQLException   
+    {   
+        Connection newConnxn = null;   
+           
+        if(availableConnections.size() == 0)   
+        {   
+            // Im out of connections. Create one more.   
+             newConnxn = getConnection();   
+            // Add this connection to the "Used" list.   
+             usedConnections.addElement(newConnxn);   
+            // We dont have to do anything else since this is   
+            // a new connection.   
+        }   
+        else   
+        {   
+            // Connections exist !   
+            // Get a connection object   
+            newConnxn = (Connection)availableConnections.lastElement();   
+            // Remove it from the available list.   
+            availableConnections.removeElement(newConnxn);   
+            // Add it to the used list.   
+            usedConnections.addElement(newConnxn);               
+        }           
+           
+        // Either way, we should have a connection object now.   
+        return newConnxn;   
+    }   
+      
+    
+    public synchronized void checkin(Connection c)   
+    {   
+        if(c != null)   
+        {   
+            // Remove from used list.   
+            usedConnections.removeElement(c);   
+            // Add to the available list   
+            availableConnections.addElement(c);           
+        }   
+    }         
+    
+    
+    public int availableCount()   
+    {   
+        return availableConnections.size();   
+    }   
+       
+    
 	public void run() {
-		// TODO Auto-generated method stub
+        try   
+        {   
+            while(true)   
+            {   
+                synchronized(this)   
+                {   
+                    while(availableConnections.size() > initialConnectionCount)   
+                    {   
+                        // Clean up extra available connections.   
+                        Connection c = (Connection)availableConnections.lastElement();   
+                        availableConnections.removeElement(c);   
+                           
+                        // Close the connection to the database.   
+                        c.close();   
+                    }   
+                       
+                    // Clean up is done   
+                }   
+                   
+                System.out.println("CLEANUP : Available Connections : " + availableCount());   
+                   
+                // Now sleep for 1 minute   
+                Thread.sleep(60000 * 1);   
+            }       
+        }   
+        catch(SQLException sqle)   
+        {   
+            sqle.printStackTrace();   
+        }   
+        catch(Exception e)   
+        {   
+            e.printStackTrace();   
+        }   
 		
 	}
 

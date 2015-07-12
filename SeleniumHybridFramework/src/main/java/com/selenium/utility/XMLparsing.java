@@ -8,7 +8,9 @@ public class XMLparsing {
 	static Logger log = Logger.getLogger(XMLparsing.class.getName());
 	static final String LOG_PROPERTIES_FILE = "resources/log4j.properties";
 	
-	
+	public void xmlTestData() {
+		System.out.println("Release Number" + GlobalVar.release_num);
+	}
 	
 }
 

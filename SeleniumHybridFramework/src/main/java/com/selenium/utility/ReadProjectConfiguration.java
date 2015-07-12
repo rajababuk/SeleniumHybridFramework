@@ -21,7 +21,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 import org.apache.log4j.Logger;
-import com.selenium.dto.*;
 
 /**
  * This class is used to read configuration details, defined in file /resources/Project.configuration.
@@ -47,6 +46,10 @@ public class ReadProjectConfiguration {
 	static Logger log = Logger.getLogger(ReadProjectConfiguration.class.getName());
 	static final String LOG_PROPERTIES_FILE = "resources/log4j.properties";
 	
+	
+	//
+	//public static String release_num;
+	
 	//To read property file format (log4j.properties) used Property class.
 	Properties conf_file = new Properties();
 
@@ -54,26 +57,25 @@ public class ReadProjectConfiguration {
 	 * This method is to read configuration file (project.configuration) and 
 	 * set values through bean file. 
 	 */
-	public void readProjectConfFile() {
+	public void readProjectConfigure() {
 		
 		//Read configuration file in try catch block.
 		try {
-			FileInputStream read = new FileInputStream("Configuration/Project.Configuration");
+			FileInputStream read = new FileInputStream("resources/Project.Configuration");
 			conf_file.load(read);
 		} catch (IOException e) {
 			log.debug("Config file reading error", e);
 		}
 		
-		//Bean class object for Setter.
-		GlobalBean GetSet= new GlobalBean();
-		GetSet.setRelease_num(conf_file.getProperty("Release"));
-		GetSet.setBrowser(conf_file.getProperty("Browser"));
-		GetSet.setTestscenrios_xml(conf_file.getProperty("TestScenrios"));
-		GetSet.setTestcase_xml(conf_file.getProperty("TestCases"));
-		GetSet.setTestdata_xml(conf_file.getProperty("TestData"));
-		GetSet.setDBConnectionString(conf_file.getProperty("DBConnectionString"));
-		GetSet.setUser_id(conf_file.getProperty("DBUserID"));
-		GetSet.setPassword(conf_file.getProperty("DBPassword"));
+		//Assign values to global variables 
+		GlobalVar.release_num=(conf_file.getProperty("Release"));
+		GlobalVar.browser=(conf_file.getProperty("Browser"));
+		GlobalVar.testscenrios_xml=(conf_file.getProperty("TestScenrios"));
+		GlobalVar.testcase_xml=(conf_file.getProperty("TestCases"));
+		GlobalVar.testdata_xml=(conf_file.getProperty("TestData"));
+		GlobalVar.DBConnectionString=(conf_file.getProperty("DBConnectionString"));
+		GlobalVar.user_id=(conf_file.getProperty("DBUserID"));
+		GlobalVar.password=(conf_file.getProperty("DBPassword"));
 	}
 			
 }
