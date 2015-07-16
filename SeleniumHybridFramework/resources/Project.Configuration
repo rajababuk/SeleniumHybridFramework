@@ -16,9 +16,9 @@ Browser=Chrome
 //Second XML file define test cases.
 //Third XMl file define test data.
 //Sample XML files are provided with framework, please look into those to create your xml file as required.
-TestScenrios=/Users/ashv/Automation/workspace/SeleniumHybridFramework/SeleniumHybridFramework/resources/TestDataInput/TestScenraios.xml
-TestCases=/Users/ashv/Automation/workspace/SeleniumHybridFramework/SeleniumHybridFramework/resources/TestDataInput/TestCases.xml
-TestData=/Users/ashv/Automation/workspace/SeleniumHybridFramework/SeleniumHybridFramework/resources/TestDataInput/TestData.xml
+TestScenarios=/Users/ashv/Automation/workspace/SeleniumHybridFramework/SeleniumHybridFramework/resources/TestData/TestScenarios.xml
+TestCases=/Users/ashv/Automation/workspace/SeleniumHybridFramework/SeleniumHybridFramework/resources/TestData/TestCases.xml
+TestData=/Users/ashv/Automation/workspace/SeleniumHybridFramework/SeleniumHybridFramework/resources/TestData/TestData.xml
 
 
 //If are testing values inside DB then Provide DB connection details, currently we are supporting  MSSQL. 

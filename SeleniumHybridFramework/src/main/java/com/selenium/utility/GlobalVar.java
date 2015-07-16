@@ -44,7 +44,7 @@ public class GlobalVar {
 	
 	public static String release_num;
 	public static String browser;
-	public static String testscenrios_xml;
+	public static String testscenarios_xml;
 	public static String testcase_xml;
 	public static String testdata_xml;
 	public static String DBConnectionString;

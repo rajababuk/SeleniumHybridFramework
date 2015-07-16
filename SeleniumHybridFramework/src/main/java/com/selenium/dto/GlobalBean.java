@@ -30,22 +30,22 @@ package com.selenium.dto;
 
 public class GlobalBean {
 	
-	private String rid;
 	private String sid;
-	private String execute;
+	private String execute_flag;
 	
 	/**
-	 * @return the rid
+	 * @return the execute_flag
 	 */
-	public String getRid() {
-		return rid;
+	public String getExecute_flag() {
+		return execute_flag;
 	}
 	/**
-	 * @param rid the rid to set
+	 * @param execute_flag the execute_flag to set
 	 */
-	public void setRid(String rid) {
-		this.rid = rid;
+	public void setExecute_flag(String execute_flag) {
+		this.execute_flag = execute_flag;
 	}
+
 	/**
 	 * @return the sid
 	 */
@@ -58,18 +58,7 @@ public class GlobalBean {
 	public void setSid(String sid) {
 		this.sid = sid;
 	}
-	/**
-	 * @return the execute
-	 */
-	public String getExecute() {
-		return execute;
-	}
-	/**
-	 * @param execute the execute to set
-	 */
-	public void setExecute(String execute) {
-		this.execute = execute;
-	}
+
 
 }
 

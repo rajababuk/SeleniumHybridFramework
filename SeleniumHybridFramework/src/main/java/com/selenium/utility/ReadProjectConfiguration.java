@@ -70,7 +70,7 @@ public class ReadProjectConfiguration {
 		//Assign values to global variables 
 		GlobalVar.release_num=(conf_file.getProperty("Release"));
 		GlobalVar.browser=(conf_file.getProperty("Browser"));
-		GlobalVar.testscenrios_xml=(conf_file.getProperty("TestScenrios"));
+		GlobalVar.testscenarios_xml=(conf_file.getProperty("TestScenarios"));
 		GlobalVar.testcase_xml=(conf_file.getProperty("TestCases"));
 		GlobalVar.testdata_xml=(conf_file.getProperty("TestData"));
 		GlobalVar.DBConnectionString=(conf_file.getProperty("DBConnectionString"));
