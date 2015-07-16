@@ -1,36 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Test_Scenarios>
-					
-			<releaseinfo id = 1.0>
-				<record>	
-					<scenarios>S1</scenarios>
-					<description>Verify hotel search</description>   <!-- description tag this is not mandatory row. This is just for reference of testers so that they can identify test scenario. -->
+
+<!-- 
+-Description tag this is not mandatory row. This is just for reference of testers so that they can identify test scenario. 
+-
+-->
+			<releaseinfo id = 1.0>	
+				<scenario sid=S1>
+					<description>Verify hotel search</description>   
 					<execute>Y</execute>
-				</record>
+				</scenario>
 				
-				<record>
-					<scenarios>S2</scenarios>
+				<scenario sid=S2>
 					<description>Verify landing page labels</description>
 					<execute>Y</execute>
-				</record>
+				</scenario>
 				
-				<record>
-					<scenarios>S3</scenarios>
+				<scenario sid=3>
 					<description>Verify search result page Java script</description>
 					<execute>Y</execute>
-				</record>
+				</scenario>
 				
-				<record>
-					<scenarios>S4</scenarios>
+				<scenario sid=4>
 					<description>Verify values in DB</description>
 					<execute>Y</execute>
-				</record>
+				</scenario>
 				
-				<record>
-					<scenarios>S5</scenarios>
+				<scenario sid=4>
 					<description>Verify Frames and pop up and mouse hover on landing page</description>
 					<execute>Y</execute>
-				</records>	
+				</scenario>	
 			</releaseinfo>	
 			
 </Test_Scenarios>

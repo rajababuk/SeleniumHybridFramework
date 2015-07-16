@@ -23,13 +23,54 @@ package com.selenium.dto;
  * @author ashvini sharma
  * @version 1.0
  * 
- * Last Edited by ashvini sharma on @date 6-June-2015
+ * Last Edited by ashvini sharma on @date 16-June-2015
  * @version 1.0
  *
  */
 
 public class GlobalBean {
 	
+	private String rid;
+	private String sid;
+	private String execute;
+	
+	/**
+	 * @return the rid
+	 */
+	public String getRid() {
+		return rid;
+	}
+	/**
+	 * @param rid the rid to set
+	 */
+	public void setRid(String rid) {
+		this.rid = rid;
+	}
+	/**
+	 * @return the sid
+	 */
+	public String getSid() {
+		return sid;
+	}
+	/**
+	 * @param sid the sid to set
+	 */
+	public void setSid(String sid) {
+		this.sid = sid;
+	}
+	/**
+	 * @return the execute
+	 */
+	public String getExecute() {
+		return execute;
+	}
+	/**
+	 * @param execute the execute to set
+	 */
+	public void setExecute(String execute) {
+		this.execute = execute;
+	}
+
 }
 
 

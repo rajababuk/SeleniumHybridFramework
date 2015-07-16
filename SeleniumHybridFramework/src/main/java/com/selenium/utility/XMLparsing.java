@@ -10,7 +10,11 @@ public class XMLparsing {
 	
 	public void xmlTestData() {
 		System.out.println("Release Number" + GlobalVar.release_num);
+		
+		
 	}
+	
+	
 	
 }
 
