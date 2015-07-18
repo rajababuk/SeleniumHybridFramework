@@ -59,6 +59,11 @@ public class GlobalBean {
 		this.sid = sid;
 	}
 
+    @Override
+    public String toString() {
+        return "Test Scenarios:: ID= "+ this.sid +" Execution Flag = " + this.execute_flag;
+    }
+	
 
 }
 

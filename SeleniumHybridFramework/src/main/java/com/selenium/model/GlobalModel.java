@@ -19,8 +19,6 @@
 package com.selenium.model;
 
 import org.apache.log4j.Logger;
-
-import com.selenium.dto.GlobalBean;
 import com.selenium.utility.*;
 
 import org.junit.AfterClass;

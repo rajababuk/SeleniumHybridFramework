@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Test_Scenarios>
-
-<!-- 
--Description tag this is not mandatory row. This is just for reference of testers so that they can identify test scenario. 
--
--->
 				<scenario sid="S1">
-				
+					<description>Verify landing page labels</description>
 					<execute>Y</execute>
 				</scenario>
 				
@@ -15,17 +10,17 @@
 					<execute>Y</execute>
 				</scenario>
 				
-				<scenario sid="3">
+				<scenario sid="S3">
 					<description>Verify search result page Java script</description>
 					<execute>Y</execute>
 				</scenario>
 				
-				<scenario sid="4">
+				<scenario sid="S4">
 					<description>Verify values in DB</description>
 					<execute>Y</execute>
 				</scenario>
 				
-				<scenario sid="5">
+				<scenario sid="S5">
 					<description>Verify Frames and pop up and mouse hover on landing page</description>
 					<execute>Y</execute>
 				</scenario>	
