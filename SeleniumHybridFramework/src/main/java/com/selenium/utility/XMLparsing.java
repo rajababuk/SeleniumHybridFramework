@@ -17,7 +17,7 @@ import javax.xml.stream.events.XMLEvent;
 
 import org.apache.log4j.Logger;
 
-import com.selenium.dto.GlobalBean;
+import com.selenium.dto.TestScenarioBean;
 
 public class XMLparsing {
 	
@@ -25,13 +25,18 @@ public class XMLparsing {
 	static Logger log = Logger.getLogger(XMLparsing.class.getName());
 	static final String LOG_PROPERTIES_FILE = "resources/log4j.properties";
 	
-	//Global variables
-	//String release_num = GlobalVar.release_num;
+	
+	 /*  Global variables */
+	//Getting xml file's path from configuration file
 	String test_scenraios_XML_path = GlobalVar.testscenarios_xml;
-	List<GlobalBean> sclists = new ArrayList<GlobalBean>();
+	String test_case_XML_path = GlobalVar.testcase_xml;
+	String test_data_XML_path = GlobalVar.testdata_xml;
+	
+	//Collection interface 
+	List<TestScenarioBean> sclist = new ArrayList<TestScenarioBean>();
     
-    // read the XML document
-    GlobalBean sc = null;
+    //Bean class object for test scenarios
+    TestScenarioBean sc = null;
 	
 	//XML tag constants for test scenarios
 	static final String scenario="scenario";
@@ -55,7 +60,7 @@ public class XMLparsing {
 		              StartElement startElement = event.asStartElement();
 		              // If we have an release_info element, we create a new item
 		              if (startElement.getName().getLocalPart().equals(scenario)) {
-		            	  sc = new GlobalBean();
+		            	  sc = new TestScenarioBean();
 		            	  Attribute idAttr = startElement.getAttributeByName(new QName(sid));
 	                       if(idAttr != null){
 	                    	   sc.setSid(idAttr.getValue());
@@ -75,7 +80,7 @@ public class XMLparsing {
 		            if (event.isEndElement()) {
 		              EndElement endElement = event.asEndElement();
 		              if (endElement.getName().getLocalPart().equals(scenario)) {
-		            	  sclists.add(sc);
+		            	  sclist.add(sc);
 		              }
 		            }  
 		      }
@@ -85,12 +90,23 @@ public class XMLparsing {
 	      e.printStackTrace();
 	    }
 		
-		//Data in List variable: sclists
-		//Debug: 
-		for(GlobalBean sc : sclists){
+		//Debug: For-each loop for object
+		for(TestScenarioBean sc : sclist){
             System.out.println(sc.toString());
         }
 
 	}
+	
+	//Test Cases based on Test Scenarios
+	public void ParseTestCases() {
+		
+	}
+	
+	//Test Data based on Test Cases
+	public void ParseTestData() {
+		
+	}
+	
+	//End Class
 }
 

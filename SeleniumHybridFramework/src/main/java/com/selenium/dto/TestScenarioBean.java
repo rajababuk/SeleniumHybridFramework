@@ -28,7 +28,7 @@ package com.selenium.dto;
  *
  */
 
-public class GlobalBean {
+public class TestScenarioBean {
 	
 	private String sid;
 	private String execute_flag;

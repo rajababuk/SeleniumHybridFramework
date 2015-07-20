@@ -7,7 +7,7 @@
 				
 				<scenario sid="S2">
 					<description>Verify landing page labels</description>
-					<execute>Y</execute>
+					<execute>N</execute>
 				</scenario>
 				
 				<scenario sid="S3">
