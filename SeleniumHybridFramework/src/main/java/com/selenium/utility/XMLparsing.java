@@ -22,6 +22,7 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.namespace.QName;
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
@@ -30,6 +31,7 @@ import javax.xml.stream.events.Attribute;
 import javax.xml.stream.events.EndElement;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
+
 import org.apache.log4j.Logger;
 
 import com.selenium.dto.TestCaseBean;
@@ -71,7 +73,8 @@ public class XMLparsing {
 	List<TestScenarioBean> sclist = new ArrayList<TestScenarioBean>();
 	List<TestCaseBean> tclist = new ArrayList<TestCaseBean>();
 	List<TestDataBean> tdlist = new ArrayList<TestDataBean>();
-    
+	
+	List<TestCaseBean> tclist1 = new ArrayList<TestCaseBean>();
     //Bean class object for all XML files.
     TestScenarioBean sc = null;
     TestCaseBean tc = null;
@@ -124,6 +127,7 @@ public class XMLparsing {
 		              EndElement endElement = event.asEndElement();
 		              if (endElement.getName().getLocalPart().equals(scenario)) {
 		            	  sclist.add(sc);
+		            	  //Debug: System.out.println(sclist);
 		              }
 		            }  
 		      }
@@ -150,6 +154,7 @@ public class XMLparsing {
 		      InputStream intc = new FileInputStream(test_case_XML_path);
 		      XMLEventReader eventReader2 = inputFactory2.createXMLEventReader(intc);
 
+		      int i=0;
 		      while (eventReader2.hasNext()) {
 		    	  XMLEvent event = eventReader2.nextEvent();
 		    	   	  
@@ -160,9 +165,25 @@ public class XMLparsing {
 		            	  tc = new TestCaseBean();
 		            	  Attribute idAttr = startElement.getAttributeByName(new QName(sid));
 	                       if(idAttr != null){
-	                    	   tc.setSid(idAttr.getValue());
+	                    	  tc.setSid(idAttr.getValue());
 	                       } 
-		              	}		              
+		              	} 
+		              /* if (startElement.getName().getLocalPart().equals(testcase_record)) {
+		            	  tc = new TestCaseBean();
+		              	}       */
+		              
+		              /*if (event.isStartElement()) {
+			                if (event.asStartElement().getName().getLocalPart().equals(scenario)) {
+			                	
+			                	Attribute idAttr = startElement.getAttributeByName(new QName(sid));
+			                	if(idAttr != null){
+			                    	 tc.setSid(idAttr.getValue());
+			                       } 
+			                	continue;
+			                }
+			              }*/
+		              
+		              
 		              if (event.isStartElement()) {
 			                if (event.asStartElement().getName().getLocalPart().equals(testcase_num)) {
 			                  event = eventReader2.nextEvent();
@@ -189,13 +210,14 @@ public class XMLparsing {
 		            if (event.isEndElement()) {
 		              EndElement endElement = event.asEndElement();
 		              if (endElement.getName().getLocalPart().equals(scenario)) {
-		            	  //tclist.addAll(tclist);
-		            	  //System.out.println("Here");
+		            	  //tclist.add(tc);		      
+		            	  //System.out.println(tclist);
 		            	  
 		              }
 		              if (endElement.getName().getLocalPart().equals(testcase_record)) {
 		            	  tclist.add(tc);
-		            	  //System.out.println("Here");
+		            	  tc = new TestCaseBean();
+		            	  //System.out.println(tclist);
 		              }
 		            } 
 		      }
@@ -208,7 +230,8 @@ public class XMLparsing {
 		//Debug: For-each loop for object
 		for(TestCaseBean tc : tclist){
           System.out.println(tc.toString());
-      }
+		}
+		//System.out.println(tclist);
 
 	}
 	
