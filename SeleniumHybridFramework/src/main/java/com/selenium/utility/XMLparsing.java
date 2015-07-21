@@ -154,7 +154,8 @@ public class XMLparsing {
 		      InputStream intc = new FileInputStream(test_case_XML_path);
 		      XMLEventReader eventReader2 = inputFactory2.createXMLEventReader(intc);
 
-		      int i=0;
+		      String SecnarioID=null;
+		      
 		      while (eventReader2.hasNext()) {
 		    	  XMLEvent event = eventReader2.nextEvent();
 		    	   	  
@@ -166,11 +167,12 @@ public class XMLparsing {
 		            	  Attribute idAttr = startElement.getAttributeByName(new QName(sid));
 	                       if(idAttr != null){
 	                    	  tc.setSid(idAttr.getValue());
+	                    	  SecnarioID = idAttr.getValue();
 	                       } 
 		              	} 
-		              /* if (startElement.getName().getLocalPart().equals(testcase_record)) {
-		            	  tc = new TestCaseBean();
-		              	}       */
+		              if (startElement.getName().getLocalPart().equals(testcase_record)) {
+		            	  tc.setSid(SecnarioID);
+		              	}       
 		              
 		              /*if (event.isStartElement()) {
 			                if (event.asStartElement().getName().getLocalPart().equals(scenario)) {
