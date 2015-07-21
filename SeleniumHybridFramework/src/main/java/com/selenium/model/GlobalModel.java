@@ -57,6 +57,7 @@ public class GlobalModel {
 	public void RunSuite() {
 		XMLparsing xml = new XMLparsing();
 		xml.ParseTestScenarios();
+		xml.ParseTestCases();
 	}
 	
 	@AfterClass

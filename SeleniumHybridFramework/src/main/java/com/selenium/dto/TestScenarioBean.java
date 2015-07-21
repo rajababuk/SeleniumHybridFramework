@@ -31,19 +31,19 @@ package com.selenium.dto;
 public class TestScenarioBean {
 	
 	private String sid;
-	private String execute_flag;
+	private String testscen_exec;
 	
 	/**
-	 * @return the execute_flag
+	 * @return the testscen_exec
 	 */
-	public String getExecute_flag() {
-		return execute_flag;
+	public String getTestscen_exec() {
+		return testscen_exec;
 	}
 	/**
-	 * @param execute_flag the execute_flag to set
+	 * @param testscen_exec the testscen_exec to set
 	 */
-	public void setExecute_flag(String execute_flag) {
-		this.execute_flag = execute_flag;
+	public void setTestscen_exec(String testscen_exec) {
+		this.testscen_exec = testscen_exec;
 	}
 
 	/**
@@ -61,7 +61,7 @@ public class TestScenarioBean {
 
     @Override
     public String toString() {
-        return "Test Scenarios:: ID= "+ this.sid +" Execution Flag = " + this.execute_flag;
+        return "Test Scenarios:: ID= "+ this.sid +" Execution Flag = " + this.testscen_exec;
     }
 	
 

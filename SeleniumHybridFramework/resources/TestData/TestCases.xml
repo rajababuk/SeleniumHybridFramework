@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<Test_Cases>
-				<scenario id=S1> 
+				<scenario sid="S1"> 
 					<record>
 						<testcase>TC1</testcase> 
 						<execute>Y</execute>
@@ -23,7 +23,7 @@
 					</record>	
 				</scenario>
 				
-				<scenario id=S2>					
+				<scenario sid="S2">					
 					<record>
 						<testcase>TC1</testcase> 
 						<execute>Y</execute>
@@ -40,7 +40,7 @@
 				</scenario>
 
 				
-				<scenario id=S3>				
+				<scenario sid="S3">				
 					<record>
 						<testcase>TC1</testcase> 
 						<execute>N</execute>
@@ -71,7 +71,7 @@
 				</scenario>				
 				
 				
-				<scenario id=S4>					
+				<scenario sid="S4">					
 					<record>
 						<testcase>TC1</testcase>  
 						<execute>Y</execute>
