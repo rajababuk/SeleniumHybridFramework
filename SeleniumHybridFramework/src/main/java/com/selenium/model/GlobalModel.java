@@ -58,6 +58,8 @@ public class GlobalModel {
 		XMLparsing xml = new XMLparsing();
 		xml.ParseTestScenarios();
 		xml.ParseTestCases();
+		xml.ParseTestData();
+		xml.FilterTestCase();
 	}
 	
 	@AfterClass

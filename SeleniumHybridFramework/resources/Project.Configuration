@@ -18,14 +18,14 @@ Browser=Chrome
 //Sample XML files are provided with framework, please look into those to create your xml file as required.
 
 //Win
-//TestScenarios=F:\\Automation\\Selenuim\\workspace\\SeleniumHybridFramework\\SeleniumHybridFramework\\resources\\TestData\\TestScenarios.xml
-//TestCases=F:\\Automation\\Selenuim\\workspace\\SeleniumHybridFramework\\SeleniumHybridFramework\\resources\\TestData\\TestCases.xml
-//TestData=F:\\Automation\\Selenuim\\workspace\\SeleniumHybridFramework\\SeleniumHybridFramework\\resources\\TestData\\TestData.xml
+TestScenarios=F:\\Automation\\Selenuim\\workspace\\SeleniumHybridFramework\\SeleniumHybridFramework\\resources\\TestData\\TestScenarios.xml
+TestCases=F:\\Automation\\Selenuim\\workspace\\SeleniumHybridFramework\\SeleniumHybridFramework\\resources\\TestData\\TestCases.xml
+TestData=F:\\Automation\\Selenuim\\workspace\\SeleniumHybridFramework\\SeleniumHybridFramework\\resources\\TestData\\TestData.xml
 
 //Mac
-TestScenarios=/Users/ashv/Automation/workspace/SeleniumHybridFramework/SeleniumHybridFramework/resources/TestData/TestScenarios.xml
-TestCases=/Users/ashv/Automation/workspace/SeleniumHybridFramework/SeleniumHybridFramework/resources/TestData/TestCases.xml
-TestData=/Users/ashv/Automation/workspace/SeleniumHybridFramework/SeleniumHybridFramework/resources/TestData/TestData.xml
+//TestScenarios=/Users/ashv/Automation/workspace/SeleniumHybridFramework/SeleniumHybridFramework/resources/TestData/TestScenarios.xml
+//TestCases=/Users/ashv/Automation/workspace/SeleniumHybridFramework/SeleniumHybridFramework/resources/TestData/TestCases.xml
+//TestData=/Users/ashv/Automation/workspace/SeleniumHybridFramework/SeleniumHybridFramework/resources/TestData/TestData.xml
 
 
 //If are testing values inside DB then Provide DB connection details, currently we are supporting  MSSQL. 
